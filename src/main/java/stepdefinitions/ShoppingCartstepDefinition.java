@@ -50,7 +50,6 @@ public class ShoppingCartstepDefinition {
         double calProdVal = shoppingCartPage.getProductUnitPrice() * shoppingCartPage.getProductQuantity();
         /* Asserting the above calculated value with the expected value */
         Assert.assertEquals("Validation of actual and calculated product subtotal", calProdVal, shoppingCartPage.getProductSubTotal(), 0);
-        System.out.println("value is same" + Double.compare(calProdVal, shoppingCartPage.getProductSubTotal()));
         shoppingCartPage.agreeWithTerms();
         shoppingCartPage.checkout();
     }

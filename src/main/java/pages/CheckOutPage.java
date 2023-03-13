@@ -100,7 +100,6 @@ public class CheckOutPage extends BasePage {
 
     public String getCity() {
         Select select = new Select(wait.until(ExpectedConditions.visibilityOf(billingCountrySel)));
-        System.out.println(select.getFirstSelectedOption().getText());
         return select.getFirstSelectedOption().getText();
     }
 
@@ -140,7 +139,6 @@ public class CheckOutPage extends BasePage {
     }
 
     public CheckOutPage setBillingDetails(BillingDetails billingDetails) {
-        System.out.println(billingDetails.getBillingFirstName());
         return enterBillingFirstName(billingDetails.getBillingFirstName()).
                 enterBillingLastName(billingDetails.getBillingLastName()).
                 enterEmailId(billingDetails.getBillingEmail()).

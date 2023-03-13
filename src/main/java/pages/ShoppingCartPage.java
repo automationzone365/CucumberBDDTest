@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -86,7 +85,6 @@ public class ShoppingCartPage extends BasePage {
 
     public void selProduct(String productName) {
         String raw = "img[alt='Picture of " + productName + "']";
-        System.out.println("locator of image" + raw);
         byte[] bytes = raw.getBytes(StandardCharsets.UTF_8);
         String utf8Encoded = new String(bytes, StandardCharsets.UTF_8);
         By prdImgBtn = By.cssSelector(utf8Encoded);
@@ -96,7 +94,6 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public void setQuantity(String qty) {
-        System.out.println(qty);
         wait.until(ExpectedConditions.visibilityOf(prdQtyInputcls));
         Actions act = new Actions(driver);
         act.moveToElement(prdQtyInputcls);
@@ -123,18 +120,15 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public double getProductUnitPrice() {
-        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(prodUnitPriceSpan))
-                .getText());
+        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(prodUnitPriceSpan)).getText());
     }
 
     public double getProductQuantity() {
-        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(itemQuanityInput))
-                .getAttribute("value"));
+        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(itemQuanityInput)).getAttribute("value"));
     }
 
     public double getProductSubTotal() {
-        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(subTotalCartPriceSpan))
-                .getText());
+        return Double.parseDouble(wait.until(ExpectedConditions.visibilityOf(subTotalCartPriceSpan)).getText());
     }
 
     public ShoppingCartPage agreeWithTerms() {

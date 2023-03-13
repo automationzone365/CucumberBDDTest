@@ -1,13 +1,12 @@
 package stepdefinitions;
 
 import context.DriverContext;
-
-import factory.DriverFactory;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import pages.LoginPage;
 import pages.PageFactoryManager;
 import utils.ConfigLoader;
+
+import java.util.Base64;
 
 public class HomepageDefinitions {
     private final LoginPage loginPage;
@@ -20,6 +19,6 @@ public class HomepageDefinitions {
     public void iMOnTheDemoHomePage() {
         /* Here we are loading the application base URL and credentials */
         loginPage.load(ConfigLoader.getInstance().getBaseUrl());
-        loginPage.login(ConfigLoader.getInstance().getUsername(), ConfigLoader.getInstance().getPassword());
+        loginPage.login(ConfigLoader.getInstance().getUsername(), new String(Base64.getDecoder().decode(ConfigLoader.getInstance().getPassword().getBytes())));
     }
 }

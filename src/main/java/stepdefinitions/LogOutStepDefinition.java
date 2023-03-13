@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import context.DriverContext;
 import io.cucumber.java.en.And;
-import pages.CheckOutPage;
 import pages.LogoutPage;
 import pages.PageFactoryManager;
 
