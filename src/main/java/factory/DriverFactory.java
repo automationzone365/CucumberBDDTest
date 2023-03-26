@@ -5,31 +5,41 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DriverFactory {
 
     public static WebDriver initializeDriver(String browser) {
-        WebDriver driver;
+        WebDriver driver = null;
         switch (browser) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
                 Map<String, Object> prefs = new HashMap<String, Object>();
-                prefs.put("profile.default_content_setting_values.notifications", 2);
-                prefs.put("credentials_enable_service", false);
-                prefs.put("profile.password_manager_enabled", false);
+                prefs.put("autofill.profile_enabled",false);
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
-                options.addArguments("--disable-notifications");
-                options.setExperimentalOption("prefs", prefs);
                 options.addArguments("start-maximized");
-                options.addArguments("disable-infobars");
-                options.addArguments("--disable-extensions");
-                options.addArguments("--no-proxy-server");
+                options.setExperimentalOption("prefs", prefs);
+                 driver = new ChromeDriver(options);
+//                try{
+//                    WebDriverManager.chromedriver().setup();
+//                    Map<String, Object> prefs = new HashMap<String, Object>();
+//                    prefs.put("autofill.profile_enabled",false);
+//                    ChromeOptions options = new ChromeOptions();
+//                    options.addArguments("--remote-allow-origins=*");
+//                    options.addArguments("start-maximized");
+//                    options.setExperimentalOption("prefs", prefs);
+//                    driver = new RemoteWebDriver(new URL("http://13.234.38.4:4444/wd/hub"),options);
+//                }
+//                catch (MalformedURLException e){
+//                    e.printStackTrace();
+//                }
 
-                driver = new ChromeDriver(options);
             }
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();

@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +17,7 @@ public class LoginPage extends BasePage {
     @FindBy(css = "input.login-button")
     private WebElement loginBtn;
 
+    private final String emailInput="BDD_SmartUI('css=#Email')[0]";
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -22,9 +25,11 @@ public class LoginPage extends BasePage {
     public void login(String email, String password) {
         wait.until(ExpectedConditions.visibilityOf(loginLink));
         wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
-        wait.until(ExpectedConditions.visibilityOf(emailTxt)).sendKeys(email);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id(generateIDLocator(this.emailInput))))).sendKeys(email);
+      //  wait.until(ExpectedConditions.visibilityOf(emailTxt)).sendKeys(email);
         wait.until(ExpectedConditions.visibilityOf(passwd)).sendKeys(password);
         wait.until(ExpectedConditions.visibilityOf(loginBtn));
         wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
     }
+
 }

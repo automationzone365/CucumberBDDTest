@@ -16,6 +16,6 @@ Feature: Place an order
     And I click on logout to signout of application
     Examples:
       | Product_name                  | Quantity | Success_msg                                      |
-      | Build your own cheap computer | 3        | The product has been added to your shopping cart |
+      | Build your own cheap computer | 2        | The product has been added to your shopping cart |
 
 

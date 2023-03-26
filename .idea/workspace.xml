@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e52ad5f-ee08-4677-938a-e80429af0110" name="Changes" comment="">
+    <list default="true" id="1e52ad5f-ee08-4677-938a-e80429af0110" name="Changes" comment="Added base64 decoding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hooks/BeforeAfterHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hooks/BeforeAfterHook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CheckOutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CheckOutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ShoppingCartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ShoppingCartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinitions/HomepageDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinitions/HomepageDefinitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinitions/LogOutStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinitions/LogOutStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stepdefinitions/ShoppingCartstepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stepdefinitions/ShoppingCartstepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/prod_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/prod_config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/stage_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/stage_config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/place_an_order.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/place_an_order.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +142,14 @@
       <option name="presentableId" value="Default" />
       <updated>1678380600026</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added base64 decoding">
+      <created>1678706629916</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678706629916</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +163,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added base64 decoding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added base64 decoding" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -164,6 +174,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/pages/ShoppingCartPage.java</url>
           <line>141</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pages/LoginPage.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

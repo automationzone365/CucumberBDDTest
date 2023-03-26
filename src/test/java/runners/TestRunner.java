@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features"
         ,glue={"stepdefinitions","hooks","domainobjects","customtype"},
 
-        plugin = {"html:target/cucumber/cucumber.html"}
+        plugin = {"html:target/cucumber/cucumber.html","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 
 )
 public class TestRunner {
