@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.service;
 
 import context.DriverContext;
 import io.cucumber.java.en.Given;
