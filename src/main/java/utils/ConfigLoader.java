@@ -41,4 +41,9 @@ public class ConfigLoader {
         if (prop != null) return prop;
         else throw new RuntimeException("property baseUrl is not specified in the stage_config.properties file");
     }
+    public String getBaseURI(){
+        String prop = properties.getProperty("baseUri");
+        if (prop != null) return prop;
+        else throw new RuntimeException("property baseUri is not specified in the stage_config.properties file");
+    }
 }

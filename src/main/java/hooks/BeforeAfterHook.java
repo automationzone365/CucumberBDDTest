@@ -4,6 +4,7 @@ import context.DriverContext;
 import factory.DriverFactory;
 
 
+import factory.RestAssuredServiceFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -11,10 +12,12 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import rest.RestAssuredClient;
 
 
 public class BeforeAfterHook {
     private WebDriver driver;
+    private RestAssuredClient restClient;
     private final DriverContext context;
 
     public BeforeAfterHook(DriverContext context) {
@@ -26,7 +29,10 @@ public class BeforeAfterHook {
         System.out.println("BEFORE: THREAD ID : " + Thread.currentThread().getId() + "," +
                 "SCENARIO NAME: " + scenario.getName());
         driver = DriverFactory.initializeDriver(System.getProperty("browser", "chrome"));
+        RestAssuredServiceFactory.registerClient();
+        restClient = RestAssuredServiceFactory.getRestAssuredClient();
         context.driver = driver;
+        context.restAssuredClient=restClient;
     }
 
     @After
