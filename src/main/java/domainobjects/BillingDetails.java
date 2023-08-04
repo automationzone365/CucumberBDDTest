@@ -1,6 +1,6 @@
 package domainobjects;
 
-public class BillingDetails {
+public class    BillingDetails {
     private String billingFirstName;
     private String billingLastName;
     private String billingEmail;
