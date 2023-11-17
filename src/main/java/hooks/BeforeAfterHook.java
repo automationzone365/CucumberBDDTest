@@ -28,7 +28,7 @@ public class BeforeAfterHook {
     public void before(Scenario scenario) {
         System.out.println("BEFORE: THREAD ID : " + Thread.currentThread().getId() + "," +
                 "SCENARIO NAME: " + scenario.getName());
-        driver = DriverFactory.initializeDriver(System.getProperty("browser", "chrome"));
+        driver = DriverFactory.initializeDriver(System.getProperty("browser", "firefox"));
         RestAssuredServiceFactory.registerClient();
         restClient = RestAssuredServiceFactory.getRestAssuredClient();
         context.driver = driver;
