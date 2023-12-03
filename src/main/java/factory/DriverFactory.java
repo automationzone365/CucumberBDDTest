@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -18,32 +19,49 @@ public class DriverFactory {
         WebDriver driver = null;
         switch (browser) {
             case "chrome" -> {
-                WebDriverManager.chromedriver().setup();
+             /*   WebDriverManager.chromedriver().setup();
                 Map<String, Object> prefs = new HashMap<String, Object>();
                 prefs.put("autofill.profile_enabled",false);
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 options.addArguments("start-maximized");
-                options.setExperimentalOption("prefs", prefs);
-                 driver = new ChromeDriver(options);
-//                try{
-//                    WebDriverManager.chromedriver().setup();
-//                    Map<String, Object> prefs = new HashMap<String, Object>();
-//                    prefs.put("autofill.profile_enabled",false);
-//                    ChromeOptions options = new ChromeOptions();
-//                    options.addArguments("--remote-allow-origins=*");
-//                    options.addArguments("start-maximized");
-//                    options.setExperimentalOption("prefs", prefs);
-//                    driver = new RemoteWebDriver(new URL("http://13.234.38.4:4444/wd/hub"),options);
-//                }
-//                catch (MalformedURLException e){
-//                    e.printStackTrace();
-//                }
+                options.setExperimentalOption("prefs", prefs); */
+                // driver = new ChromeDriver(options);
+
+               try{
+                   WebDriverManager.chromedriver().setup();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                   prefs.put("autofill.profile_enabled",false);
+                    ChromeOptions options = new ChromeOptions();
+                   options.addArguments("--remote-allow-origins=*");
+                    options.addArguments("start-maximized");
+                    options.setExperimentalOption("prefs", prefs);
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444"),options);
+                }
+               catch (MalformedURLException e){
+                   e.printStackTrace();
+                }
 
             }
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+            }
+
+            case "edge" ->{
+                try{
+                    WebDriverManager.edgedriver().setup();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("autofill.profile_enabled",false);
+                    EdgeOptions options = new EdgeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    options.addArguments("start-maximized");
+                    options.setExperimentalOption("prefs", prefs);
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444"),options);
+                }
+                catch (MalformedURLException e){
+                    e.printStackTrace();
+                }
             }
             default -> throw new IllegalStateException("INVALID BROWSER: " + browser);
         }
